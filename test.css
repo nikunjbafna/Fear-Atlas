@@ -1,0 +1,43 @@
+.button {
+    position: relative;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }
+  
+  .button:hover {
+    background-color: #2980b9;
+  }
+  
+  .button::before,
+  .button::after {
+    content: '';
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .button::before {
+    content: '[';
+    left: -8px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .button::after {
+    content: ']';
+    right: -8px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .button:hover::before,
+  .button:hover::after {
+    opacity: 1;
+  }
+  

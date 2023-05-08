@@ -1,0 +1,262 @@
+html,
+body {
+  background-color: black;
+  color: white;
+  /* height: 100vh; */
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: 'Azeret Mono', monospace;
+  /* letter-spacing: -1px; */
+}
+
+.intro-main {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  /* position: absolute; */
+  margin: 50px;
+  /* padding: 100px; */
+  /* top: 100px; */
+  width: 50%;
+  height: 100vh;
+  opacity: 1;
+  transition: opacity 0.5s;
+  z-index: 1;
+  word-wrap: normal;
+}
+
+.title {
+  font-size: 48px;
+  font-family: 'Azeret Mono', monospace;
+  font-weight: 400;
+}
+
+.body-text {
+  font-size: 20px;
+  font-weight: 100;
+  word-spacing: -5px;
+  line-height: 150%;
+}
+
+.title,
+.body-text,
+.title-button {
+  opacity: 0;
+  animation-name: fade-in;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.body-text {
+  animation-delay: 0.5s;
+}
+
+.title-button {
+  animation-delay: 0.5s;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* base */
+.main {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+}
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 500ms;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transition: opacity 500ms;
+}
+
+.intro-prompt {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  opacity: 0;
+  /* transition: opacity 1s; */
+}
+
+.body-text-right-sidebar {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 200;
+}
+
+.fear-box {
+  overflow: hidden;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.left-sidebar {
+  position: fixed;
+  width: 25%;
+  height: 100vh;
+  margin: 0;
+  padding: 25px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  /* transition: opacity 1s; */
+  transition-delay: 1s;
+}
+
+.fear-select {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-wrap: normal;
+  flex-grow: 1;
+  align-items: start;
+}
+
+/* Hide scrollbar */
+.fear-select::-webkit-scrollbar {
+  display: none;
+}
+
+.fear-select {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  padding-bottom: 50px;
+}
+
+.criteria-title {
+  font-size: 12px;
+  font-weight: 300;
+  word-spacing: -5px;
+  line-height: 150%;
+}
+
+.right-sidebar {
+  position: fixed;
+  width: 20%;
+  height: 100vh;
+  right: 0;
+  top: 0;
+  color: white;
+
+  /* box-sizing: border-box; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  font-size: 12px;
+  font-family: monospace;
+}
+
+.top,
+.bottom {
+  fill: white;
+  /* border: 1px solid white; */
+  /* padding: 25px; */
+  background-color: rgba(255, 255, 255, 0);
+  transition: background-color 100ms ease, height 300ms ease, width 300ms ease;
+  align-items: center
+}
+
+.top {
+  height: 65%;
+  aspect-ratio: 3/7;
+}
+
+.bottom {
+  height: 35%;
+  aspect-ratio: 6/3;
+}
+
+canvas {
+  height: 100vh;
+  width: 100vw;
+}
+
+.text-only-button {
+  background-color: transparent;
+  border: none;
+  padding-top: 2px;
+  cursor: pointer;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+  color: white;
+  transition: color 100ms ease-out;
+  text-align: left;
+  font-size: 12px;
+  font-family: monospace;
+}
+
+.text-only-button:hover,
+.text-only-button.active {
+  color: green;
+  font-weight: 600;
+}
+
+.title-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  font-family: 'Azeret Mono', monospace;
+  font-weight: 400;
+  color: white;
+  transition: color 100ms ease-out;
+  /* text-align: left; */
+  padding: 10px 0px;
+
+  position: relative;
+
+  text-decoration: none;
+  font-size: 24px;
+}
+
+.title-button:hover {
+  color: green;
+}
+
+.title-button::before,
+.title-button::after {
+  content: '';
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.title-button::before {
+  content: '[';
+  left: -20px;
+  top: 45%;
+  transform: translateY(-50%);
+}
+
+.title-button::after {
+  content: ']';
+  /* right: -15px; */
+  top: 45%;
+  transform: translateY(-50%);
+}
+
+.title-button:hover::before,
+.title-button:hover::after {
+  opacity: 1;
+  font-size: 32px;
+}

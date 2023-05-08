@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fear Atlas</title>
+    <link rel="stylesheet" href="main.css" />
+    <script
+      async
+      src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"
+    ></script>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.150.0/build/three.module.js",
+          "three/examples/jsm/": "https://unpkg.com/three@0.150.0/examples/jsm/"
+        }
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@100;200;300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <script src="dataProcessing.js" type="module" async defer></script>
+
+    <script src="onLoad.js"></script>
+
+    <div class="intro-main" id="intro-main">
+      <h1 class="title">What frightens us?</h1>
+      <p class="body-text">
+        Changing times and new environments have generated new expectations and
+        fears in people's minds. Take a look into the fears, worries, and
+        concerns of people today.
+      </p>
+      <button id="title-button" class="title-button">enter</button>
+    </div>
+
+    <div class="main">
+      <div class="fear-box">
+        <canvas id="fear" data-engine="three.js r146"></canvas>
+        <script src="main.js" type="module" async defer></script>
+      </div>
+
+      <div class="intro-prompt fade-in" id="intro-prompt">
+        <p>
+          < Start by choosing a fear from the list.
+          <br />
+          <br />
+          Scroll to view all.
+        </p>
+      </div>
+
+      <div class="left-sidebar fade-in" id="left-sidebar">
+        <div class="introduction">
+          <h1 class="title" style="font-size: 36px">Fear Atlas</h1>
+          <p class="body-text-right-sidebar">
+            Data gathered from the Chapman University’s Survey of American Fears
+            (CSAF).
+            <br />
+            <br />
+            Each cell in the cluster represents a respondent in the survey
+            (n=1035). The individual's response to selected fear is represented
+            by the characteristic of the cell.
+            <br />
+            <br />
+            Fears which have had a more significant impact on the respondents are
+            represented in denser clusters.
+            <br />
+            <br />
+            Fears which don't have an impact on the respondents are
+            represented in sparse clusters.
+          </p>
+          <hr style="border-top: 3px dotted; border-bottom: 0px" />
+        </div>
+        <div class="fear-select">
+          <!-- const leadingQuestion = document.createElement("p");
+          // leadingQuestion.classList.add("criteria-title");
+          // criteriaTitle.textContent = "> " + question.criteria;
+          leadingQuestion.textContent = "How afraid are you of the following?";
+          // leadingQuestion.style.textTransform = "uppercase";
+          fearSelectDiv.appendChild(leadingQuestion); -->
+
+          <p class="criteria-title">How afraid are you of the following?</p>
+
+          <script src="buttons.js" type="module" async defer></script>
+        </div>
+      </div>
+
+      <div class="right-sidebar">
+        <div class="top" id="top">
+          <script src="ridgeline.js" type="module" async defer></script>
+        </div>
+
+        <div class="bottom" id="bottom">
+          <script src="relation.js" type="module" async defer></script>
+        </div>
+      </div>
+    </div>
+
+    <!-- <script src="interact.js" type="module" async defer></script> -->
+  </body>
+</html>
