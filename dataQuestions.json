@@ -1,4 +1,4 @@
-[{ "criteria": "Health", "question": "Dying?", "number": "Q10C" }, { "criteria": "Health", "question": "Catching the coronavirus (COVID-19)?", "number": "Q14G" },
+[{ "criteria": "Health", "question": "Death?", "number": "Q10C" }, { "criteria": "Health", "question": "Catching the coronavirus (COVID-19)?", "number": "Q14G" },
 
 { "criteria": "Environment", "question": "Air pollution?", "number": "Q13A" }, { "criteria": "Environment", "question": "Water Pollution?", "number": "Q13C" }, { "criteria": "Environment", "question": "Extinction of plant and animal species?", "number": "Q13D" }, { "criteria": "Environment", "question": "Oil spills?", "number": "Q13E" }, { "criteria": "Environment", "question": "Global warming and climate change?", "number": "Q13F" },
 
